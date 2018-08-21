@@ -5,4 +5,6 @@ import koin.example.snapnoob.insertkoin.ui.base.view.BaseViewContract
 interface LoginActivityContract : BaseViewContract {
 
     fun showLoggedUser(userName: String)
+
+    fun openMainActivity()
 }
