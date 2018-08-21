@@ -8,17 +8,13 @@ import koin.example.snapnoob.insertkoin.util.AppConstants
 
 class AppDataManager(private val appPreferenceHelper: AppPreferenceHelper, private val appApiHelper: AppApiHelper) : DataManager {
 
-    override fun performNowPlayingMovie(): Single<MovieResponse> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
-    override fun performUpcomingMovie(): Single<MovieResponse> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun performNowPlayingMovie(): Single<MovieResponse> = appApiHelper.performNowPlayingMovie()
 
-    override fun performSearchMovieData(query: String): Single<MovieResponse> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun performUpcomingMovie(): Single<MovieResponse> = appApiHelper.performUpcomingMovie()
+
+    override fun performSearchMovieData(query: String): Single<MovieResponse> = appApiHelper.performSearchMovieData(query)
+
 
     override fun getCurrentUserLoggedInMode(): Int = appPreferenceHelper.getCurrentUserLoggedInMode()
 
