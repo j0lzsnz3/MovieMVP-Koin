@@ -10,4 +10,5 @@ interface LoginPresenterContract<V: LoginActivityContract> : BasePresenterContra
 
     fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
 
+    fun getStatusUserLogged(): Boolean
 }

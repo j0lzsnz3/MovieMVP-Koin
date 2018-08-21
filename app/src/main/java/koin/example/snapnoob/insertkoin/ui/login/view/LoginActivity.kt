@@ -20,6 +20,10 @@ class LoginActivity : BaseActivity(), LoginActivityContract {
         setContentView(R.layout.activity_login)
         presenter.onAttach(this)
 
+        if (presenter.getStatusUserLogged()) {
+            openMainActivity()
+        }
+
         btnGoogleSign.setOnClickListener { startActivityForResult(presenter.doUserGoogleLogin(), 9001) }
     }
 
@@ -41,4 +45,5 @@ class LoginActivity : BaseActivity(), LoginActivityContract {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         presenter.onActivityResult(requestCode, resultCode, data)
     }
+
 }

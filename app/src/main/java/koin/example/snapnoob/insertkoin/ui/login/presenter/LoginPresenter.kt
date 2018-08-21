@@ -47,4 +47,5 @@ class LoginPresenter<V: LoginActivityContract>(private val context: Context, pri
         appDataManager.setCurrentUserLoggedInMode(loggedInMode)
     }
 
+    override fun getStatusUserLogged(): Boolean = !appDataManager.getCurrentUserName().isNullOrEmpty()
 }
