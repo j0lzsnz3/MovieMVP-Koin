@@ -4,4 +4,5 @@ interface BaseViewContract {
     fun showProgressBar()
 
     fun hideProgressBar()
+
 }
