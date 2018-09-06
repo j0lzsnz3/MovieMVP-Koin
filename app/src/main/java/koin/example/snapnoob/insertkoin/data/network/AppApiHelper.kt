@@ -16,12 +16,4 @@ class AppApiHelper : ApiHelper {
                     .addQueryParameter("api_key", ApiEndPoint.ENDPOINT_MOVIE_API_KEY)
                     .build()
                     .getObjectSingle(MovieResponse::class.java)
-
-    override fun performSearchMovieData(query: String): Single<MovieResponse> =
-            Rx2AndroidNetworking.get(ApiEndPoint.ENDPOINT_MOVIES_SEARCH)
-                    .addQueryParameter("api_key", ApiEndPoint.ENDPOINT_MOVIE_API_KEY)
-                    .addQueryParameter("query", query)
-                    .build()
-                    .getObjectSingle(MovieResponse::class.java)
-
 }

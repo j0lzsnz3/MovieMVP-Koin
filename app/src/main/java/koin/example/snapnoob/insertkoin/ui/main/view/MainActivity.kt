@@ -13,6 +13,7 @@ import koin.example.snapnoob.insertkoin.ui.main.NowPlayingAdapter
 import koin.example.snapnoob.insertkoin.ui.main.UpcomingAdapter
 import koin.example.snapnoob.insertkoin.ui.main.presenter.MainPresenterContract
 import koin.example.snapnoob.insertkoin.util.ItemClickSupport
+import koin.example.snapnoob.insertkoin.util.NetworkUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 
@@ -37,8 +38,13 @@ class MainActivity : BaseActivity(), MainActivityContract {
     }
 
     private fun loadData(){
-        presenter.loadNowPlayingData()
-        presenter.loadUpcomingData()
+        if (NetworkUtil.isConnected(this)) {
+            presenter.loadNowPlayingData()
+            presenter.loadUpcomingData()
+        } else {
+            Snackbar.make(main_activity, "No Internet Connection", Snackbar.LENGTH_SHORT).show()
+        }
+
     }
 
     override fun displayNowPlayingMovie(movie: List<MovieData>?) {

@@ -40,14 +40,13 @@ ext {
     // App dependencies
     kotlinVersion = kotlinVersion
     supportLibraryVersion = '27.1.1'
-    rxjava2Version = '2.0.6'
     constraintLayoutVersion = '1.1.2'
-
     gsonVersion = '2.8.0'
     calligraphyVersion = '2.2.0'
     glideVersion = '3.7.0'
     rx2FastAndroidNetworking = '1.0.1'
     rxandroidVersion = '2.0.2'
+    rxjava2Version = '2.0.6'
     butterKnifeVersion = '8.8.1'
     roomDatabaseVersion = '1.1.1'
     placeholderviewVersion = '0.6.1'

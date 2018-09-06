@@ -13,8 +13,6 @@ class AppDataManager(private val appPreferenceHelper: AppPreferenceHelper, priva
 
     override fun performUpcomingMovie(): Single<MovieResponse> = appApiHelper.performUpcomingMovie()
 
-    override fun performSearchMovieData(query: String): Single<MovieResponse> = appApiHelper.performSearchMovieData(query)
-
 
     override fun getCurrentUserLoggedInMode(): Int = appPreferenceHelper.getCurrentUserLoggedInMode()
 

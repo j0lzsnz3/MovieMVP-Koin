@@ -20,11 +20,12 @@ class LoginActivity : BaseActivity(), LoginActivityContract {
         setContentView(R.layout.activity_login)
         presenter.onAttach(this)
 
-        if (presenter.getStatusUserLogged()) {
+        /** if (presenter.getStatusUserLogged()) {
             openMainActivity()
         }
 
-        btnGoogleSign.setOnClickListener { startActivityForResult(presenter.doUserGoogleLogin(), 9001) }
+        btnGoogleSign.setOnClickListener { startActivityForResult(presenter.doUserGoogleLogin(), 9001) } **/
+        openMainActivity()
     }
 
     override fun showLoggedUser(userName: String) {
